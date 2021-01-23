@@ -1,0 +1,50 @@
+.messages-container {
+  /* width: 45% !important;
+
+  position: absolute !important; */
+
+  max-height: 75%;
+  position: relative;
+  overflow: auto;
+}
+
+.messages-wrapper {
+  height: auto;
+  width: auto;
+}
+
+.messages-container .MuiBadge-dot {
+  background-color: #4dc24d !important;
+  height: 15px !important;
+  min-width: 15px !important;
+  border-radius: 50% !important;
+}
+
+.messages-container .MuiBadge-dot::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 80%;
+  height: 80%;
+  border-radius: 50%;
+  animation: ripple 1.2s infinite ease-in-out;
+  border: 1px solid #4dc24d;
+  content: '';
+}
+
+.messages-container .message-match {
+  margin: 10px 0;
+  padding: 0 10px;
+  width: 80%;
+}
+
+@keyframes ripple {
+  0% {
+    transform: scale(0.8);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(2.4);
+    opacity: 0;
+  }
+}

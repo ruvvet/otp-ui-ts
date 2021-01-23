@@ -1,0 +1,18 @@
+
+.header-container img {
+  height: 80px;
+  object-fit: contain;
+  filter: invert(100%);
+}
+
+.github:hover {
+  color: #000000 !important;
+}
+
+.twitter:hover {
+  color: #00acee !important;
+}
+
+.instagram:hover {
+  color: #c13584 !important;
+}
