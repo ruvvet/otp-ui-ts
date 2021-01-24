@@ -38,7 +38,7 @@ export default function Settings() {
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e:React.FormEvent<HTMLFormElement>) => {
     setSnackbar(true);
     e.preventDefault();
 
@@ -128,8 +128,8 @@ export default function Settings() {
         <Select
           labelId="rank-input"
           value={rank}
-          onChange={(e) => {
-            dispatch(setRank(e.target.value));
+          onChange={(e: React.ChangeEvent<{ value: unknown }>) => {
+            dispatch(setRank(e.target.value as string));
           }}
           fullWidth
         >

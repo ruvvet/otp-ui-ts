@@ -4,7 +4,13 @@ import React, { useState } from 'react';
 import OTPRequest from '../../../utils';
 import './uploadpic.css';
 
-export default function UploadPic({ picKey, pic }) {
+interface Props {
+picKey: string;
+pic: string;
+
+}
+
+export default function UploadPic({ picKey, pic }:Props ) {
   const [snackbar, setSnackbar] = useState(false);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState();
@@ -13,7 +19,7 @@ export default function UploadPic({ picKey, pic }) {
     setSnackbar(false);
   };
 
-  const handleInput = async (e, picKey) => {
+  const handleInput = async (e: React.FormEvent<HTMLInputElement>, picKey:string) => {
     setSnackbar(true);
 
     const formData = new FormData();
@@ -58,7 +64,7 @@ export default function UploadPic({ picKey, pic }) {
             id={picKey}
             type="file"
             style={{ display: 'none' }}
-            onChange={(e) => handleInput(e, picKey)}
+            onChange={(e: React.FormEvent<HTMLInputElement>) => handleInput(e, picKey)}
           />
           <label htmlFor={picKey}>
             <IconButton

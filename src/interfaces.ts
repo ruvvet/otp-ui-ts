@@ -1,3 +1,5 @@
+import { ReactNode } from 'react';
+
 export interface OTPRequestInit extends RequestInit {
   headers: HeadersInit | OTPHeaders;
 }
@@ -17,9 +19,9 @@ export interface ProfileResponse {
   instagram: string;
   lastActive: string;
   pictures: {
-      index: 'picOne' | 'picTwo' | 'picThree';
-      url: string;
-  }[]
+    index: 'picOne' | 'picTwo' | 'picThree';
+    url: string;
+  }[];
   rank: string;
   reddit: string;
   snapchat: string;
@@ -27,7 +29,9 @@ export interface ProfileResponse {
   tiktok: string;
   twitch: string;
   twitter: string;
-
 }
 
 
+export interface OTPProps {
+  children?:ReactNode
+}
